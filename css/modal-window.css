@@ -1,0 +1,421 @@
+/* first state: like-dislike */
+.ui-dialog-reasonsbounce.ui-dialog-first-stage .contact-form > div,
+.ui-dialog-reasonsbounce.ui-dialog-first-stage .contact-form > input {
+    display:none;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #drupal-modal {
+    margin: 0 7% 20px 7%;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage span#ui-id-1 {
+    text-aligin:left;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header {
+    display: block;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .the-question {
+    width: 55%;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-dislike {
+    width: 170px;
+    float: left;
+    margin-left: 20px;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-dislike .text {
+    width: 100%;
+    margin-top: 76px;
+    text-align: center;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-dislike .like {
+    float: left;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-dislike .dislike {
+    float: right;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-icon,
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .dislike-icon {
+    width: inherit;
+    height: inherit;
+    float: left;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    padding: 37px;
+    border: 1px solid rgb(200,220,234);
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-icon {
+    background-image: url('image/like.jpeg');
+    background-position: 14px 14px;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .dislike-icon {
+    background-image: url('image/dislike.jpeg');
+    background-position: 14px 14px;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-text {
+    font-weight: bold;
+    color: rgb(63,168,114);
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .dislike-text {
+    font-weight: bold;
+    color: rgb(121,0,41);
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like:hover,
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .dislike:hover {
+    cursor: pointer;
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-icon:hover,
+.ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .dislike-icon:hover {
+    border: 1px solid rgb(49,118,169);
+}
+.ui-dialog-reasonsbounce.ui-dialog-first-stage .field--type-markup.field--name-field-yes-no-question {
+    display: block;
+}
+/* second stage: contact form */
+.ui-dialog-reasonsbounce.ui-dialog-second-stage .contact-form > div,
+.ui-dialog-reasonsbounce.ui-dialog-second-stage .contact-form > input {
+    display:block;
+}
+.ui-dialog-reasonsbounce.ui-dialog-second-stage .field--type-markup.field--name-field-yes-no-question {
+    display: none;
+}
+.ui-dialog-reasonsbounce.ui-dialog-second-stage .contact-form {
+    width: 80%;
+    margin-left: 10%;
+}
+.ui-dialog-reasonsbounce.ui-dialog-second-stage span#ui-id-1 {
+    text-align: center;
+}
+.ui-dialog-reasonsbounce.ui-dialog-second-stage .the-question {
+    text-align: center;
+    margin: 0 20px;
+}
+
+/* main */
+.ui-dialog-reasonsbounce {
+    font-family: "Proxima Nova", sans-serif;
+    color: #003b5f;
+}
+.ui-widget-overlay.ui-front {
+    display: none;
+}
+.ui-dialog.ui-dialog-reasonsbounce.ui-widget.ui-widget-content.ui-front {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 1px solid #c8dcea;
+    box-shadow: 0px 0px 15px rgba(200,220,234, 1);
+}
+/* header */
+.ui-dialog-reasonsbounce .ui-dialog-titlebar {
+    background: none!important;
+    border: none!important;
+    font-size: 22px;
+    margin-top: 15px;
+    color: #003b5f;
+    padding-left: 7%;
+}
+.ui-dialog-reasonsbounce .ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 5px 0 10px 0;
+}
+.ui-dialog-reasonsbounce .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 8%;
+}
+.ui-dialog-reasonsbounce span#ui-id-1 {
+    width: 100%;
+}
+.ui-dialog-reasonsbounce .the-question {
+    color: #003b5f;
+    font-size: 18px;
+}
+.ui-dialog-reasonsbounce .hide {
+    display: none;
+}
+/* content, fields */
+.ui-dialog-reasonsbounce label {
+    display: none;
+}
+.ui-dialog-reasonsbounce .ui-dialog-content {
+    padding: 0;
+}
+.ui-dialog-reasonsbounce input,
+.ui-dialog-reasonsbounce textarea {
+    font-family: "Proxima Nova",sans-serif;
+    border: 1px solid #c6ddeb;
+    border-radius: 5px;
+    resize: none;
+}
+.ui-dialog-reasonsbounce textarea {
+    margin-top: 20px;
+    padding: 15px 0 0 20px;
+    font-size: 16px;
+    color: #003b5f;
+}
+.ui-dialog-reasonsbounce select {
+    width: 100%;
+    border: 1px solid #c6ddeb;
+    border-radius: 5px;
+}
+.ui-dialog-reasonsbounce textarea::placeholder {
+    font-size: 18px;
+    color: rgba(0, 59, 95, 0.5);
+}
+.ui-dialog-reasonsbounce #drupal-modal .field--name-field-first-question-response,
+.ui-dialog-reasonsbounce.ui-dialog-second-stage .contact-form .field--name-field-other {
+    display:none;
+}
+/* submit button */
+.ui-dialog-reasonsbounce .button--primary.js-form-submit.form-submit.button {
+    border-radius: 6px;
+    width: 98%;
+    margin: 0;
+    background: #2f77a2;
+    color: #ffffff;
+    padding: 15px;
+    border-style: none;
+    outline: none;
+    margin-right: 1%;
+    margin-left: 1%;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 19px;
+}
+.ui-dialog-reasonsbounce button.ui-button {
+    outline: none;
+}
+.ui-dialog-reasonsbounce .ui-button span.ui-icon {
+    background-position: 0;
+    background-image: url('image/close-icon.png');
+    width: 38px;
+    height: 36px;
+    display: block;
+    top: -3px;
+    left: -7px;
+}
+.ui-dialog-reasonsbounce .ui-button span.ui-icon*{
+    outline: none;
+}
+
+/* footer */
+.ui-dialog-reasonsbounce .webform_footer {
+    margin: 20px 0 15px 0;
+    padding-top: 20px;
+    font-family: "Proxima Nova", sans-serif;
+    color: #003b5f;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #c8dcea;
+}
+.ui-dialog-reasonsbounce .webform_footer .description {
+    margin-bottom: 15px;
+}
+.ui-dialog-reasonsbounce .webform_footer .contact_phone,
+.ui-dialog-reasonsbounce .webform_footer .contact_email {
+    font-weight: bold;
+    margin-left: 5px;
+}
+.ui-dialog-reasonsbounce .webform_footer .dot {
+    height: 3px;
+    width: 3px;
+    background-color: #003b5f;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 0px 3px 4px;
+}
+/* select field */
+.ui-dialog-reasonsbounce .smartselect button {
+    font-family: "Proxima Nova",sans-serif;
+}
+.ui-dialog-reasonsbounce label.ss-nobubble {
+    display: block;
+    position: absolute;
+    top: 9px;
+    width: 220px;
+    left: 100px;
+}
+.ui-dialog-reasonsbounce label.ss-nobubble input {
+    border: none;
+    color: rgba(0, 121, 163, 1);
+    height: 30px;
+}
+.ui-dialog-reasonsbounce .active label.ss-nobubble input {
+    color: #003b5f;
+}
+.ui-dialog-reasonsbounce .smartselect {
+    font-family: "Proxima Nova",sans-serif;
+    width: 100%;
+    color: #003b5f;
+    font-size: 18px;
+    line-height: 1.06;
+    letter-spacing: 0.6px;
+    border: 0.1em solid rgba(0, 121, 163, 0.2);
+    border-radius: 5px;
+    position: relative;
+    margin: 15px 0px 20px 0px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ui-dialog-reasonsbounce .open>.dropdown-menu {
+    display: block;
+    overflow-x: hidden;
+}
+.ui-dialog-reasonsbounce .dropdown-menu {
+    position: absolute;
+    z-index: 100;
+    min-width: 160px;
+    padding: 0;
+    margin: 0;
+    display: none;
+    text-align: left;
+    list-style: none;
+    width: inherit;
+    height: 160px;
+    overflow: auto;
+    background: #ffffff;
+    border: 1px solid rgba(0, 121, 163, 0.2);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.ui-dialog-reasonsbounce ul.dropdown-menu li:first-child {
+    display: none;
+}
+.ui-dialog-reasonsbounce .dropdown-menu::-webkit-scrollbar {
+    width: 10px;
+}
+.ui-dialog-reasonsbounce .dropdown-menu::-webkit-scrollbar-track {
+    background: rgb(226, 235, 240);
+}
+.ui-dialog-reasonsbounce .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #0079a3;
+    outline: 1px solid slategrey;
+    border-radius: 10px;
+}
+.ui-dialog-reasonsbounce .dropdown-toggle {
+    text-align: left;
+    padding-left: 25px;
+    height: 40px;
+    background: none;
+    width: inherit;
+    color: rgba(0, 59, 95, 1);
+    font-size: 18px;
+    line-height: 1.06;
+    letter-spacing: 0.6px;
+    border:none;
+    border-bottom: 0.1em solid rgba(0, 121, 163, 0.1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.ui-dialog-reasonsbounce .dropdown-toggle .first-state {
+    color: rgba(0, 59, 95, 0.5);
+}
+.ui-dialog-reasonsbounce li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    height: 40px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 121, 163, 0.2);
+    margin: 0;
+    cursor: pointer;
+}
+.ui-dialog-reasonsbounce li span{
+    color: rgba(0, 59, 95, 0.5);
+}
+.ui-dialog-reasonsbounce li.active span{
+    color: #003b5f;
+}
+.ui-dialog-reasonsbounce .smartselect .data-level-1.ss-nogrp>a {
+    position: absolute;
+    padding: 15px 0 0 40px;
+}
+.ui-dialog-reasonsbounce .smartselect .other-title {
+    width: auto;
+    position: absolute;
+    left: 40px;
+    top: 15px;
+    color: rgba(0, 59, 95, 0.5);
+}
+.ui-dialog-reasonsbounce .smartselect li.active .other-title {
+    color: #003b5f;
+}
+.ui-dialog-reasonsbounce  .smartselect > button > .ss-caret {
+    background-image: url('image/select-icon.jpeg');
+    background-position: 2px -3px;
+    width: 40px;
+    height: 40px;
+}
+.ui-dialog-reasonsbounce .dropdown-menu a:after {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    background-image: url(image/checkbox.jpeg);
+    display: block;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.ui-dialog-reasonsbounce .dropdown-menu .active a:after {
+    background-image: url(image/checkbox-active.jpeg);
+    display:block;
+    content: '';
+    width: 30px;
+    height: 30px;
+}
+.ui-dialog-reasonsbounce .smartselect i.ss-checker,
+.ui-dialog-reasonsbounce .smartselect i.ss-checkno {
+    display:none;
+}
+@media (max-width: 768px) {
+    .ui-dialog.ui-dialog-reasonsbounce {
+        width: 80%!important;
+        overflow: auto;
+        bottom: auto;
+        height: auto!important;
+        max-height: 100vh;
+    }
+    .ui-dialog-reasonsbounce .ui-front.ui-dialog-content.ui-widget-content {
+        max-width: 80%;
+        margin-left: 10%;
+        max-height: 87%!important;
+        height: auto!important;
+    }
+    .ui-dialog-reasonsbounce .contact-message-feedbacktest-form.contact-message-form.contact-form {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        height: 100%;
+    }
+    .ui-dialog-reasonsbounce .contact-message-feedbacktest-form.contact-message-form.contact-form div {
+        height: inherit;
+    }
+    .ui-dialog-reasonsbounce li {
+        height: 60px!important;
+    }
+}
+@media (max-width: 680px) {
+    .ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .the-question {
+        width: 100%;
+    }
+    .ui-dialog-reasonsbounce.ui-dialog-first-stage #webform_header .like-dislike {
+        width: 70%;
+        margin-left: 15%;
+    }
+    .ui-dialog-reasonsbounce .dropdown-menu {
+        height: 180px;
+    }
+}
+@media (max-width: 500px) {
+    .ui-dialog.ui-dialog-reasonsbounce {
+        width: 100%!important;
+        margin-left: 0!important;
+    }
+}

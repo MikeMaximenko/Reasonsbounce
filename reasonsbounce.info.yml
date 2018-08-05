@@ -1,0 +1,10 @@
+name: Bounce reasons
+type: module
+description: Why are clients leaving your site? This module will help you to find answers.
+# core: 8.x
+dependencies:
+  - contact
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'reasonsbounce'
+datestamp: 1464593659

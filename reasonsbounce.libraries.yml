@@ -1,0 +1,17 @@
+form:
+  js:
+    js/reasonsbounce.form.js: {}
+  css:
+    theme:
+      css/modal-window.css: {}
+  dependencies:
+    - core/drupal.dialog
+    - core/drupal.dialog.ajax
+    - core/drupalSettings
+
+smartselect:
+  js:
+    js/smartselect/dist/jquery.smartselect.js: {}
+  css:
+    theme:
+      js/smartselect/dist/smartselect.css: {}

@@ -1,0 +1,38 @@
+{
+  "name": "smartselect",
+  "version": "1.0.24",
+  "description": "SmartSelect is a jQuery multiselect and tree / hierarchy select plugin with bootstrap style. It is 10x faster than similar plugins and supports complex data relations.",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phossa/smartselect.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "js",
+    "jquery",
+    "smartselect",
+    "multiple select",
+    "multiselect",
+    "bootstrap"
+  ],
+  "author": "Hong Zhang <phossa@126.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/phossa/smartselect/issues"
+  },
+  "dependencies": {
+    "jquery": ">=1.9.0"
+  },
+  "homepage": "http://phossa.github.io/smartselect/docs/index.html",
+  "docs": "http://phossa.github.io/smartselect/docs/docs.html",
+  "demo": "http://phossa.github.io/smartselect/docs/demo.html",
+  "bugs": "https://github.com/phossa/smartselect/issues"
+}

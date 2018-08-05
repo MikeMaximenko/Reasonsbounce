@@ -1,0 +1,122 @@
+<?php
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function reasonsbounce_page_attachments(array &$page) {
+  $contact_form_storage = \Drupal::entityManager()->getStorage('contact_form');
+  $contact_forms = $contact_form_storage->loadMultiple();
+  $redirect_uri = \Drupal::service('path.current')->getPath();
+  if (!empty($contact_forms)) {
+    $conditionManager = \Drupal::service('plugin.manager.condition');
+    $current_user = \Drupal::currentUser();
+    $request = \Drupal::request();
+    if ($request->attributes->has('node')) {
+      $node = $request->attributes->get('node');
+    }
+
+    foreach ($contact_forms as $contact_form) {
+      $is_accessible = FALSE;
+      $settings = $contact_form->getThirdPartySetting('reasonsbounce', 'request_path', []);
+      if (!empty($settings) && $settings['pages'] != "") {
+        $condition = $conditionManager->createInstance('request_path')->setConfiguration($settings);
+
+        if ($condition->evaluate()) {
+          $is_accessible = TRUE;
+        }
+      }
+
+      if (!$is_accessible && !empty($node)) {
+        $settings = $contact_form->getThirdPartySetting('reasonsbounce', 'node_types', []);
+        if (!empty($settings)) {
+          $condition = $conditionManager->createInstance('node_type')
+            ->setConfig('bundles', $settings['bundles'])
+            ->setContextValue('node', $node);
+
+          if ($condition->evaluate()) {
+            $is_accessible = TRUE;
+          }
+        }
+      }
+
+      if ($is_accessible && $current_user->hasPermission('access site-wide contact form')) {
+        $settings = $contact_form->getThirdPartySetting('reasonsbounce', 'roles', []);
+        if (!empty($settings)) {
+          $condition = $conditionManager->createInstance('user_role')
+            ->setConfig('roles', $settings['roles'])
+            ->setContextValue('user', $current_user);
+
+          if (!$condition->evaluate()) {
+            continue;
+          }
+        }
+      }
+
+      if (!empty($request->cookies->get('Drupal_visitor_contact_message_' . $contact_form->id() . '_form'))) {
+        $is_accessible = FALSE;
+      }
+
+      if ($is_accessible) {
+
+        if (empty($redirect_uri = $contact_form->getRedirectPath())) {
+          $redirect_uri = \Drupal::service('path.current')->getPath();
+        }
+
+        $page['#attached']['library'][] = 'reasonsbounce/form';
+        $page['#attached']['library'][] = 'reasonsbounce/smartselect';
+        $page['#attached']['drupalSettings']['reasonsbounce']['form']['path'] = 
+          \Drupal\Core\Url::fromRoute('reasonsbounce.form', ['form_id' => $contact_form->id()])->toString();
+        $page['#attached']['drupalSettings']['reasonsbounce']['form']['message'] = 
+          $contact_form->getThirdPartySetting('reasonsbounce', 'message');
+        $page['#attached']['drupalSettings']['reasonsbounce']['form']['function'] =
+          $contact_form->getThirdPartySetting('reasonsbounce', 'function');
+        $page['#attached']['drupalSettings']['reasonsbounce']['form']['redirect'] = $redirect_uri;
+        break;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation().
+ */
+function reasonsbounce_entity_operation(\Drupal\Core\Entity\EntityInterface $entity) {
+  $operations = array();
+  $entity_type_id = $entity->getEntityTypeId();
+  if ($entity_type_id == 'contact_form') {
+    $operations['reasonsbounce'] = array(
+      'title' => t('Reasons bounce'),
+      'weight' => 100,
+      'url' => \Drupal\Core\Url::fromRoute('reasonsbounce.configure', ['contact_form' => $entity->id()]),
+    );
+  }
+
+  return $operations;
+}
+
+function reasonsbounce_form_alter (&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'contact_message_feedbackmodal_form') {
+    array_unshift($form['actions']['submit']['#submit'], 'reasonsbounce_contact_form_submit');
+    array_push($form['actions']['submit']['#submit'], 'reasonsbounce_contact_form_submit_redirect');
+
+    $form['submit'] = $form['actions']['submit'];
+    $form['submit']['#weight'] = 5;
+    unset($form['actions']['submit']);
+  }
+}
+
+function reasonsbounce_contact_form_submit (&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  user_cookie_save([$form['#form_id'] => "pass"]);
+  \Drupal::request()->cookies->set($form['#form_id'], 'pass');
+}
+
+function reasonsbounce_contact_form_submit_redirect (&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+  if (empty($redirect= \Drupal::request()->query->get('destination'))) {
+    $redirect = '/home';
+  }
+  $redirect_url = \Drupal\Core\Url::fromUserInput($redirect);
+  $form_state->setRedirectUrl($redirect_url);
+}
